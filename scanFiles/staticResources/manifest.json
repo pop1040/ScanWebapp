@@ -1,0 +1,17 @@
+{
+  "short_name": "Scan",
+  "name": "Scan",
+  "background_color": "#ffffff",
+  "description":"Scan webapp for running the COSI scanner",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "48x48 72x72 96x96 128x128 192x192 256x256"
+    }
+  ],
+  "start_url": "/",
+  "display": "browser",
+  "theme_color":"white"
+}
+

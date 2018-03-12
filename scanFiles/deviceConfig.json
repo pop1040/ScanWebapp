@@ -1,0 +1,13 @@
+{
+	"Devices":[
+		{
+			"name":"Scanner",
+			"deviceType":"scannerScript",
+			"settings":{
+				"scriptPath":"/home/pop1040/workspace/scan/Scan/test.sh",
+				"outputPath":"/home/pop1040/workspace/scan/Scan/file.jpg",
+				"deleteOnRead":true
+			}
+		}
+	]
+}
