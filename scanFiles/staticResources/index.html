@@ -34,7 +34,7 @@
 	<body>
 		<div class="header">
 			<div class="fixed-width inlineflex">
-				<h1 class="h1-title">scan<span class="slash">/</span></h1>
+				<a class="hidden-link" onclick="slash()"><h1 class="h1-title">scan<div class="slash" id="slash">/</div></h1></a>
 			</div>
 		</div>
 		<div class="mainBodyContainer">
@@ -43,8 +43,11 @@
 					<div class="deviceListHeader">
 						<h1>Scanners</h1>
 					</div>
-					<div class="deviceListBody">
+					<div class="deviceListBody" id="deviceList">
 						
+					</div>
+					<div class="footer-spacer">
+						<span class="boop">boop</span>
 					</div>
 				</div>
 				<div class="mainBodySection box">
