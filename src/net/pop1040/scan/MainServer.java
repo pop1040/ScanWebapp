@@ -120,7 +120,7 @@ public class MainServer {
 			}
 			try {
 				PrintWriter w = new PrintWriter(srvPath);
-				w.print((srvDirectory = new File("scanFiles/")).getAbsolutePath()); //makes srvPath.txt since it didn't exist in this scenario, path is set to put a folder called scanFiles in the local directory
+				w.print((srvDirectory = new File("scanFiles/")).getAbsolutePath() + System.lineSeparator()); //makes srvPath.txt since it didn't exist in this scenario, path is set to put a folder called scanFiles in the local directory
 				w.close();
 				if(!srvDirectory.mkdirs()) {
 					err("Unable to create " + srvDirectory.getAbsolutePath() + ", please specify a valid directory in srvPath.txt ("+srvPath.getAbsolutePath()+") or allow the creation of the scanFiles directory");
