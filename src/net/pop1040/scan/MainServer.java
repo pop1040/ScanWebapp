@@ -92,7 +92,7 @@ public class MainServer {
 				FileReader reader = new FileReader(srvPath); //read file
 				StringBuilder s = new StringBuilder(); //cuz fast
 				int c;
-				while((c=reader.read()) != -1)s.append((char)c);
+				while((c=reader.read()) != -1 && c != '\n' && c != '\r')s.append((char)c);
 				reader.close();
 				srvDirectory = new File(s.toString()); //try to load what was in srvPath.txt as a file
 				

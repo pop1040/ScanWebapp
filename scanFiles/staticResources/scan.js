@@ -16,6 +16,7 @@ window.setInterval(function(){
 				while(elementList.childElementCount < data.devices.length){
 					let el = document.createElement("a");
 					el.classList.add("device");
+					el.classList.add("unselected");
 					
 					el.appendChild(document.createElement("img"));
 					let nameBox = document.createElement("div");
@@ -31,15 +32,56 @@ window.setInterval(function(){
 					elementList.appendChild(el);
 				}
 				for(i=0; i<elementList.childElementCount && i<data.devices.length; i++){
-					let el = elementList.children[i];
-					let dev =  data.devices[i];
+					let el = elementList.children[i]; //element on page for device
+					let dev =  data.devices[i];       //device info from server
 
 					if(el.children[0].getAttribute("src") != dev.icon)el.children[0].setAttribute("src", dev.icon);
 					if(el.children[1].children[0].textContent != dev.name)el.children[1].children[0].textContent = dev.name;
+					
+					const deviceNumber = i; //Makes it specific to the function
+					const deviceType = dev.type;
 
-					if(dev.type == "scannerScript"){
+					// if(dev.type == "scannerScript"){
 						if(el.children[1].children[1].textContent != dev.status.mode)el.children[1].children[1].textContent = dev.status.mode;
-					}
+
+						el.onclick = function(){
+							let deviceElements = document.getElementsByClassName("device");
+
+							window.selectedDevice = deviceNumber;
+
+							for(i=0; i<deviceElements.length; i++){
+								var element = deviceElements[i];
+								if(element.classList.contains("selected")){
+									element.classList.remove("selected");
+									element.classList.add("unselected");
+								}
+							}
+							el.classList.remove("unselected");
+							el.classList.add("selected");
+
+							let mainBody = document.getElementById("mainBodySection")
+							for(j=0; j<mainBody.children.length; j++){
+								if(!mainBody.children[j].classList.contains("hidden"))mainBody.children[j].classList.add("hidden");
+							}
+							let deviceMainbodyDiv = document.getElementById(deviceType);
+							deviceMainbodyDiv.classList.remove("hidden");
+							
+							
+							//clear old stuff
+							/*
+							let mainBody = document.getElementById("mainBodySection");
+							while(mainBody.firstChild)mainBody.removeChild(mainBody.firstChild);
+
+							//set main body stuff for scanner
+
+							let title = document.createElement("h2");
+							title.textContent = dev.name;
+							title.classList.add("h2-title");
+							mainBody.appendChild(title);
+							*/
+
+						}
+					// }
 
 					// console.log(data.devices[i]);
 				}

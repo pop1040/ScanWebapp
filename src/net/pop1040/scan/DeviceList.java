@@ -98,7 +98,7 @@ public class DeviceList {
 				PrintWriter w = new PrintWriter(deviceConfig);
 				w.println(empty.format(4));
 				w.close();
-				log("deviceConfig.json (\" + (MainServer.colorLoging?\"\\u001B[32m\"+deviceConfig.getAbsolutePath()+\"\\u001B[0m\":deviceConfig.getAbsolutePath()) + \") did not exist, creating");
+				log("deviceConfig.json (" + (MainServer.colorLoging?"\u001B[32m"+deviceConfig.getAbsolutePath()+"\u001B[0m":deviceConfig.getAbsolutePath()) + ") did not exist, creating");
 			} catch (FileNotFoundException e) {
 				err("deviceConfig.json does not exist and unable to create deviceConfig.json (" + (MainServer.colorLoging?"\u001B[32m"+deviceConfig.getAbsolutePath()+"\u001B[0m":deviceConfig.getAbsolutePath()) + "), exiting");
 				System.exit(2);

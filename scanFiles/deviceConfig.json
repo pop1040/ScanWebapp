@@ -4,8 +4,8 @@
 			"name":"Scanner",
 			"deviceType":"scannerScript",
 			"settings":{
-				"scriptPath":"/home/pop1040/workspace/scan/Scan/test.sh",
-				"outputPath":"/home/pop1040/workspace/scan/Scan/file.jpg",
+				"scriptPath":"/var/www/scan/scan.sh",
+				"outputPath":"/var/www/scan/cache/file.bmp",
 				"deleteOnRead":true
 			}
 		}

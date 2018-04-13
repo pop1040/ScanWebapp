@@ -42,6 +42,7 @@
   align-items: center;
   text-align: center;
   cursor: default;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
   /* box-shadow: 0px 2px 4px #a9b4a8; */
 }
 
@@ -50,6 +51,12 @@
   margin-bottom: 15px;
   margin-left: 20px;
   font-size: 32px;
+}
+.h2-title{
+	margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  font-size: 28px;
 }
 
 .inlineflex{
@@ -82,7 +89,7 @@ body {
   flex-direction: row;
 }
 
-.mainBodySection{
+#mainBodySection{
 	color: rgb(172, 184, 169);
   margin: 15px 15px 15px 0px;
   padding: 10px;
@@ -95,7 +102,8 @@ body {
 .box{
 	background: #ffffff;
   border: 1px solid rgb(199, 211, 195);
-	border-radius: 5px;
+  border-radius: 5px;
+  /* box-shadow: 0 1px 2px rgba(0,0,0,.1); */
 }
 /*
 .box-top{
@@ -142,15 +150,17 @@ body {
 .device{
   padding: 5px;
   border-bottom: 1px solid rgb(199, 211, 195);
+  color: rgb(172, 184, 169);
   display: flex;
   flex-direction: row;
   flex-grow: 1;
 }
- 
-.device:hover{
+
+.unselected:hover{
   cursor: hand;
   cursor: pointer;
-  background: rgb(235, 241, 235)
+  /* background: rgb(235, 241, 235) */
+  background: rgb(240, 244, 240)
 } 
 
 .device > img{
@@ -173,9 +183,24 @@ body {
   padding-left: 15px;
 }
 
+.left-padded-text{
+  padding-left: 15px;
+}
+
+.suggestion-text{
+  color: rgb(207, 207, 207);
+}
+
 .deviceListHeader > h1{
 	margin: 5px 50px;
 	font-size: 24px;
+}
+
+.selected{
+  background: #e8efe8;
+  /* background: rgb(205, 213, 205); */
+  /* background: rgb(199, 211, 195); */
+	/* color: rgb(145, 161, 142); */
 }
 
 .boop{
@@ -183,4 +208,8 @@ body {
   padding: 5px;
   /* color: rgb(231, 241, 228) */
   color: white;
+}
+
+.hidden{
+  display: none;
 }
